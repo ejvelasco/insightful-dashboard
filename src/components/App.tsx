@@ -1,9 +1,9 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import Dashboard from "./Dashboard";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import Dashboard from "./Dashboard";
 import AuthBar from "./AuthBar";
 
 const theme = createMuiTheme({
@@ -22,10 +22,10 @@ export default class App extends React.Component<any, any> {
     return (
       <Router>
         <MuiThemeProvider theme={theme}>
-          <AuthBar />
+          <Route path="/sign*" component={AuthBar} />
           <Route path="/sign-in" exact component={SignIn} />
           <Route path="/sign-up" exact component={SignUp} />
-          <Route path="/" exact component={Dashboard} />
+          <Route path="/dashboard*" component={Dashboard} />
         </MuiThemeProvider>
       </Router>
     );

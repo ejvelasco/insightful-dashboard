@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import colors from "../constants/colors";
+import { Link } from "react-router-dom";
 
 const styles = {
   root: {
@@ -42,9 +43,24 @@ function ButtonAppBar(props) {
               v1
             </span>
           </Typography>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">Search</Button>
-          <Button color="inherit">Account</Button>
+          <Link
+            to="/dashboard/home"
+            style={{
+              textDecoration: "none",
+              color: colors.white
+            }}
+          >
+            <Button color="inherit">Home</Button>
+          </Link>
+          <Link
+            to="/dashboard/account"
+            style={{
+              textDecoration: "none",
+              color: colors.white
+            }}
+          >
+            <Button color="inherit">Account</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
